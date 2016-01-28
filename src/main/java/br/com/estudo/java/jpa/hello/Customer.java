@@ -6,12 +6,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Customer implements Serializable{
-
+	
+	@SequenceGenerator(			//PostgreSQL
+			name="CUSTOMER_SEQUENCE_GENERATOR", sequenceName="sequence_teste"
+	)
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+//	@GeneratedValue(strategy=GenerationType.AUTO) 		MySQL / HSQLDB
+	@GeneratedValue(strategy=GenerationType.AUTO, generator="CUSTOMER_SEQUENCE_GENERATOR")   //PostgreSQL
+	
 	private long id;
 	private String firstName;
 	private String lastName;

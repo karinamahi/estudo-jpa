@@ -35,13 +35,13 @@ public class Application {
 			}
 		log.info("");
 		
-			//fetch an individual customer by ID
-			Customer customer = repository.findOne(1L);
-			log.info("Customer found with findOne(1L): ");
-			log.info("-----------------------------------");
-			log.info(customer.toString());
-		log.info("");
-		
+//			//fetch an individual customer by ID
+//			Customer customer = repository.findOne(1L);
+//			log.info("Customer found with findOne(1L): ");
+//			log.info("-----------------------------------");
+//			log.info(customer.toString());
+//		log.info("");
+//		
 			//fetch customers by last name
 			log.info("Customers found with findByLastName('Bauer): ");
 			log.info("-----------------------------------");
